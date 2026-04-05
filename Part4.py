@@ -56,7 +56,10 @@ class A_Star(SPAlgorithm):
             converted_graph[node] = {}
             for neighbour in graph.adj[node]:
                 converted_graph[node][neighbour] = graph.w(node, neighbour)
-        return a_star(converted_graph, source, dest, graph.get_heuristic())
+        _, path = a_star(converted_graph, source, dest, graph.get_heuristic())
+        if not path:
+            return float("inf")
+        return sum(graph.w(path[i], path[i + 1]) for i in range(len(path) - 1))
 
 
 class ShortPathFinder:
