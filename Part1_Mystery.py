@@ -90,7 +90,6 @@ def experiment_mystery_runtime():
     plt.ylabel("log(avg runtime in secs)")
     plt.title("Mystery Algorithm_Log-Log")
     plt.grid(True)
-    show_and_save("mystery_loglog_plot.png")
 
     print("\nGraph sizes tested:", sizes)
     print("Measured runtimes:", runtimes)
