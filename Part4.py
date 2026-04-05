@@ -39,12 +39,14 @@ class SPAlgorithm:
 
 class Dijkstra(SPAlgorithm):
     def calc_sp(self, graph, source, dest):
-        return dijkstra(graph, source)
+        dist = dijkstra(graph, source)
+        return dist[dest]
 
 
 class Bellman_Ford(SPAlgorithm):
     def calc_sp(self, graph, source, dest):
-        return bellman_ford(graph, source)
+        dist = bellman_ford(graph, source)
+        return dist[dest]
 
 
 class A_Star(SPAlgorithm):
